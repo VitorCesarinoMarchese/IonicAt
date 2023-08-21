@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{tec.nome}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-card *ngIf="tec">
+    <ion-card-header>
+      <img *ngIf="tec.img" src="{{tec.img}}" />
+      <ion-icon *ngIf="!tec.img" name="videocam-off"></ion-icon>
+    </ion-card-header>
+
+    <ion-card-content>
+      <h1>{{tec.nome}} <ion-icon name="star" [color]="tec.favorito===true ? 'warning' : ('light')"></ion-icon></h1>
+      <p>{{tec.descricao}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
